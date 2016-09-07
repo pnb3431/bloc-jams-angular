@@ -21,19 +21,36 @@
     		currentBuzzObject = new buzz.sound(song.audioUrl, {
         		formats: ['mp3'],
         		preload: true
-    	});
+    		});
+ 
  
     	currentSong = song;
  		};
 
+ 		/* *
+              * @function playSong
+              * @desc Plays passed in song object
+              * @param {Object} song
+        */
+
+ 		function playSong(song) {
+    		if (currentBuzzObject) {
+        		currentBuzzObject.play();
+        		song.playing = true;
+    		}
+    	};
+    	/* *
+             * @function SongPlayer.play
+             * @desc Method to start playing song
+             * @param {Object} song
+        */
+
         SongPlayer.play = function(song) {
         	if (currentSong !== song) {	
 				setSong(song);
-        		currentBuzzObject.play(); 
-        		song.playing = true; 
+        		playsong(song);
         		} else if (currentSong === song) {
-        			if (currentBuzzObject.isPaused()) {
-        			currentBuzzObject.play();
+        			playsong(song);
         			}
         		}
         	};
