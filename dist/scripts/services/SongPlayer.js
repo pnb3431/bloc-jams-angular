@@ -24,7 +24,7 @@
     		});
  
  
-    	currentSong = song;
+    		currentSong = song;
  		};
 
  		/* *
@@ -33,11 +33,9 @@
               * @param {Object} song
         */
 
- 		function playSong(song) {
-    		if (currentBuzzObject) {
-        		currentBuzzObject.play();
-        		song.playing = true;
-    		}
+ 		var playSong = function(song) {
+    	currentBuzzObject.play();
+    	song.playing = true;
     	};
     	/* *
              * @function SongPlayer.play
@@ -48,10 +46,12 @@
         SongPlayer.play = function(song) {
         	if (currentSong !== song) {	
 				setSong(song);
-        		playsong(song);
+        		playSong(song);
         		} else if (currentSong === song) {
-        			playsong(song);
-        			}
+        			if (currentBuzzObject.isPaused()) {
+            		currentBuzzObject.play();
+          			}
+
         		}
         	};
         	
