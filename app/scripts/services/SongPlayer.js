@@ -47,8 +47,9 @@
 
  		var playSong = function(song) {
  			song = song || SongPlayer.currentSong;
-    		currentBuzzObject.play();
+    		currentBuzzObject.play()
     		song.playing = true;
+    		
     	};
 
     	/* *
@@ -103,6 +104,7 @@
         			playSong(song);
           		}
         	}
+        	
         };
         	
         SongPlayer.pause = function(song) {
@@ -168,6 +170,10 @@
                 currentBuzzObject.setVolume(volume);
             }
             SongPlayer.volume = volume;
+        };
+
+        SongPlayer.mute = function() {
+            SongPlayer.setVolume(0);
         };
 
 
