@@ -13,7 +13,10 @@
   "author": "Bloc Inc",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "hapi": "~7.5.0",
+    "mongoose": "^4.6.0",
     "path": "^0.4.9"
   },
   "devDependencies": {
