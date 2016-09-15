@@ -53,6 +53,12 @@
     		
     	};
 
+    	/* *
+              * @function plays next song after completing current song
+              * @desc moves to next passed in song object
+              * @param {Object} song
+        */
+
     	var autoPlay = function(song) {
     		currentBuzzObject.bind("ended", function(){
     			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
