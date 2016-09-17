@@ -23,7 +23,7 @@
                 <a href="/collection" class="navbar-link">collection</a>
                 <button id="btn-login" class="btn-login">Sign In</button>
             </div> 
-            <h2>Welcome <span id="nick" class="nickname"></span></h2>
+            <h2>Welcome {{ profile.nickname }}<span id="nick" class="nickname"></span></h2>
 
 
         </nav>
@@ -40,6 +40,7 @@
         <script src="/scripts/controllers/CollectionCtrl.js"></script>
         <script src="/scripts/controllers/AlbumCtrl.js"></script>
         <script src="/scripts/controllers/PlayerBarCtrl.js"></script>
+        <script src="/scripts/controllers/ProfileCtrl.js"></script>
         <script src="/scripts/directives/seekBar.js"></script>
         <script src="/scripts/filters/timecode.js"></script>
 </body>
