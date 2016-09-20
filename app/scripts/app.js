@@ -21,6 +21,10 @@
                 controller: 'LoginCtrl as login',
                 templateUrl: '/templates/login.html'
             })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: '/templates/profile.html'
+            })
          	.state('collection', {
              	url: '/collection',
              	controller: 'CollectionCtrl as collection',
