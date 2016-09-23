@@ -126,6 +126,11 @@ body.landing {
  .container.narrow {
      max-width: 56rem;
  }
+ .bar { 
+    position: relative;
+    padding: 2rem;
+
+ }
   
  /* Medium and small screens (640px) */
  @media (min-width: 640px) {

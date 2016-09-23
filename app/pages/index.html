@@ -16,7 +16,7 @@
 </head>
 <body>
     
-    <nav class="navbar"><!-- navigation bar -->
+    <nav class="navbar" data-ng-controller="NavCtrl as ctrl"><!-- navigation bar -->
             <a href="/" class="logo">
                 <img src="assets/images/bloc_jams_logo.png" alt="bloc jams logo">
             </a>
@@ -24,11 +24,20 @@
                 <a href="/collection" class="navbar-link">collection</a>
                 <button id="btn-login" class="btn-login">Sign In</button>
             </div> 
-            <h2>Welcome <span id="nick" class="nickname"></span></h2>
+            <div class="bar" >
+                <input type="text" ng-model="ctrl.searchBox">
+            </div>
+                <ul>
+                    <li ng-repeat="album in collection.albums track by $index | filter:ctrl.searchBox">
+                    {{ album.title }}
 
+                    </li>
+                </ul>
 
         </nav>
+
         <ui-view></ui-view>
+
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -41,7 +50,9 @@
         <script src="/scripts/controllers/CollectionCtrl.js"></script>
         <script src="/scripts/controllers/AlbumCtrl.js"></script>
         <script src="/scripts/controllers/PlayerBarCtrl.js"></script>
+        <script src="/scripts/controllers/NavCtrl.js"></script>
         <script src="/scripts/directives/seekBar.js"></script>
         <script src="/scripts/filters/timecode.js"></script>
+        
 </body>
 </html>
