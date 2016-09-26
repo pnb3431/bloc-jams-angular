@@ -1,10 +1,13 @@
 (function() {
-    function CollectionCtrl(Fixtures) {
-    	this.albums = Fixtures.getCollection(12);
+    function CollectionCtrl($scope, Fixtures) {
+    	this.albums = Fixtures.getCollection();
+
+    	$scope.query = '';
+        $scope.queryBy = '$';
     		
     }
  
     angular
         .module('blocJams')
-        .controller('CollectionCtrl', ['Fixtures', CollectionCtrl]);
+        .controller('CollectionCtrl', ['$scope','Fixtures', CollectionCtrl]);
 })();

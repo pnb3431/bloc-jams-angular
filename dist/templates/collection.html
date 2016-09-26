@@ -1,5 +1,27 @@
 <section class="album-covers container clearfix">
-    <div class="collection-album-container column fourth" ng-repeat="album in collection.albums track by $index">
+    <form class="collection_search_form">
+       <div class="input-group">
+           <div class="input-group-addon">
+               <i class="ion-ios-search"></i>
+           </div>
+           
+           <input type="text" class="form-control" placeholder="Search by song, album, artist or everything.." ng-model="query[queryBy]">
+       </div>
+       
+       <br>
+       
+       <label>search by: </label>
+       <select ng-model="queryBy">
+           <option value="$" selected>All</option>
+           <option value="songs">Song</option>
+           <option value="title">Album</option>
+           <option value="artist">Artist</option>
+       </select>
+   </form>
+   
+   <hr>    
+
+    <div class="collection-album-container column fourth" ng-repeat="album in collection.albums track by $index | filter:query">
         <img src="{{ album.albumArtUrl }}">
         <div class="collection-album-info caption">
             <p>

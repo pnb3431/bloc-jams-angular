@@ -24,17 +24,7 @@
                 <a href="/collection" class="navbar-link">collection</a>
                 <button id="btn-login" class="btn-login">Sign In</button>
             </div> 
-            <div class="bar" >
-                <input type="text" ng-model="ctrl.searchBox">
-            </div>
-                <ul>
-                    <li ng-repeat="album in collection.albums track by $index | filter:ctrl.searchBox">
-                    {{ album.title }}
-
-                    </li>
-                </ul>
-
-        </nav>
+    </nav>
 
         <ui-view></ui-view>
 
